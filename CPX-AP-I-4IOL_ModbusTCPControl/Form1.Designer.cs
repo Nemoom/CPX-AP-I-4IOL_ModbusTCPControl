@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.gb_ISDU = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
@@ -50,25 +51,31 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cob_Channel = new System.Windows.Forms.ComboBox();
+            this.txt_ModuleNumber = new System.Windows.Forms.TextBox();
+            this.cob_Command = new System.Windows.Forms.ComboBox();
+            this.txt_Data = new System.Windows.Forms.TextBox();
+            this.txt_Length = new System.Windows.Forms.TextBox();
+            this.txt_Subindex = new System.Windows.Forms.TextBox();
+            this.txt_Index = new System.Windows.Forms.TextBox();
+            this.lbl_ISDUstatus = new System.Windows.Forms.Label();
+            this.cob_Type = new System.Windows.Forms.ComboBox();
+            this.cob_ParaList = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label21 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txt_AddressStart = new System.Windows.Forms.TextBox();
             this.btn_In = new System.Windows.Forms.Button();
             this.btn_Out = new System.Windows.Forms.Button();
             this.btn_Ack = new System.Windows.Forms.Button();
             this.btn_Intermediate = new System.Windows.Forms.Button();
+            this.lbl_i_In = new System.Windows.Forms.Label();
+            this.lbl_i_Out = new System.Windows.Forms.Label();
+            this.lbl_i_Move = new System.Windows.Forms.Label();
+            this.lbl_i_Device = new System.Windows.Forms.Label();
+            this.lbl_i_Intermediate = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btn_Start = new System.Windows.Forms.Button();
@@ -77,10 +84,12 @@
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modifyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txt_IP = new System.Windows.Forms.TextBox();
             this.btn_Connect = new System.Windows.Forms.Button();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.imageList_Status = new System.Windows.Forms.ImageList(this.components);
+            this.imageList_Error = new System.Windows.Forms.ImageList(this.components);
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.gb_ISDU.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -95,8 +104,8 @@
             // gb_ISDU
             // 
             this.gb_ISDU.Controls.Add(this.tableLayoutPanel1);
-            this.gb_ISDU.Controls.Add(this.comboBox2);
-            this.gb_ISDU.Location = new System.Drawing.Point(602, 28);
+            this.gb_ISDU.Controls.Add(this.cob_ParaList);
+            this.gb_ISDU.Location = new System.Drawing.Point(742, 28);
             this.gb_ISDU.Margin = new System.Windows.Forms.Padding(4);
             this.gb_ISDU.Name = "gb_ISDU";
             this.gb_ISDU.Padding = new System.Windows.Forms.Padding(4);
@@ -130,15 +139,15 @@
             this.tableLayoutPanel1.Controls.Add(this.label17, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.label18, 0, 7);
             this.tableLayoutPanel1.Controls.Add(this.label19, 0, 8);
-            this.tableLayoutPanel1.Controls.Add(this.comboBox1, 2, 4);
-            this.tableLayoutPanel1.Controls.Add(this.textBox2, 2, 3);
-            this.tableLayoutPanel1.Controls.Add(this.comboBox3, 2, 2);
-            this.tableLayoutPanel1.Controls.Add(this.textBox1, 2, 8);
-            this.tableLayoutPanel1.Controls.Add(this.textBox3, 2, 7);
-            this.tableLayoutPanel1.Controls.Add(this.textBox4, 2, 6);
-            this.tableLayoutPanel1.Controls.Add(this.textBox5, 2, 5);
-            this.tableLayoutPanel1.Controls.Add(this.label20, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.comboBox4, 2, 9);
+            this.tableLayoutPanel1.Controls.Add(this.cob_Channel, 2, 4);
+            this.tableLayoutPanel1.Controls.Add(this.txt_ModuleNumber, 2, 3);
+            this.tableLayoutPanel1.Controls.Add(this.cob_Command, 2, 2);
+            this.tableLayoutPanel1.Controls.Add(this.txt_Data, 2, 8);
+            this.tableLayoutPanel1.Controls.Add(this.txt_Length, 2, 7);
+            this.tableLayoutPanel1.Controls.Add(this.txt_Subindex, 2, 6);
+            this.tableLayoutPanel1.Controls.Add(this.txt_Index, 2, 5);
+            this.tableLayoutPanel1.Controls.Add(this.lbl_ISDUstatus, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.cob_Type, 2, 9);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(4, 58);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -330,91 +339,115 @@
             this.label19.TabIndex = 18;
             this.label19.Text = "34007..34126";
             // 
-            // comboBox1
+            // cob_Channel
             // 
-            this.comboBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cob_Channel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cob_Channel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cob_Channel.FormattingEnabled = true;
+            this.cob_Channel.Items.AddRange(new object[] {
             "1",
             "2",
             "3",
             "4"});
-            this.comboBox1.Location = new System.Drawing.Point(258, 147);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(231, 31);
-            this.comboBox1.TabIndex = 19;
+            this.cob_Channel.Location = new System.Drawing.Point(258, 147);
+            this.cob_Channel.Name = "cob_Channel";
+            this.cob_Channel.Size = new System.Drawing.Size(231, 31);
+            this.cob_Channel.TabIndex = 19;
             // 
-            // textBox2
+            // txt_ModuleNumber
             // 
-            this.textBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox2.Location = new System.Drawing.Point(258, 111);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(231, 30);
-            this.textBox2.TabIndex = 22;
+            this.txt_ModuleNumber.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txt_ModuleNumber.Location = new System.Drawing.Point(258, 111);
+            this.txt_ModuleNumber.Name = "txt_ModuleNumber";
+            this.txt_ModuleNumber.Size = new System.Drawing.Size(231, 30);
+            this.txt_ModuleNumber.TabIndex = 22;
             // 
-            // comboBox3
+            // cob_Command
             // 
-            this.comboBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
+            this.cob_Command.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cob_Command.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cob_Command.FormattingEnabled = true;
+            this.cob_Command.Items.AddRange(new object[] {
             "50 Read (with Byte swap)",
             "51 Write (with Byte swap)",
             "100 Read",
             "101 Write"});
-            this.comboBox3.Location = new System.Drawing.Point(258, 75);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(231, 31);
-            this.comboBox3.TabIndex = 23;
+            this.cob_Command.Location = new System.Drawing.Point(258, 75);
+            this.cob_Command.Name = "cob_Command";
+            this.cob_Command.Size = new System.Drawing.Size(231, 31);
+            this.cob_Command.TabIndex = 23;
+            this.cob_Command.SelectedIndexChanged += new System.EventHandler(this.cob_Command_SelectedIndexChanged);
             // 
-            // textBox1
+            // txt_Data
             // 
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Location = new System.Drawing.Point(258, 291);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(231, 43);
-            this.textBox1.TabIndex = 24;
+            this.txt_Data.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txt_Data.Location = new System.Drawing.Point(258, 291);
+            this.txt_Data.Multiline = true;
+            this.txt_Data.Name = "txt_Data";
+            this.txt_Data.Size = new System.Drawing.Size(231, 43);
+            this.txt_Data.TabIndex = 24;
             // 
-            // textBox3
+            // txt_Length
             // 
-            this.textBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox3.Location = new System.Drawing.Point(258, 255);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(231, 30);
-            this.textBox3.TabIndex = 25;
+            this.txt_Length.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txt_Length.Location = new System.Drawing.Point(258, 255);
+            this.txt_Length.Name = "txt_Length";
+            this.txt_Length.Size = new System.Drawing.Size(231, 30);
+            this.txt_Length.TabIndex = 25;
             // 
-            // textBox4
+            // txt_Subindex
             // 
-            this.textBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox4.Location = new System.Drawing.Point(258, 219);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(231, 30);
-            this.textBox4.TabIndex = 26;
+            this.txt_Subindex.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txt_Subindex.Location = new System.Drawing.Point(258, 219);
+            this.txt_Subindex.Name = "txt_Subindex";
+            this.txt_Subindex.Size = new System.Drawing.Size(231, 30);
+            this.txt_Subindex.TabIndex = 26;
             // 
-            // textBox5
+            // txt_Index
             // 
-            this.textBox5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox5.Location = new System.Drawing.Point(258, 183);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(231, 30);
-            this.textBox5.TabIndex = 27;
+            this.txt_Index.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txt_Index.Location = new System.Drawing.Point(258, 183);
+            this.txt_Index.Name = "txt_Index";
+            this.txt_Index.Size = new System.Drawing.Size(231, 30);
+            this.txt_Index.TabIndex = 27;
             // 
-            // label20
+            // lbl_ISDUstatus
             // 
-            this.label20.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label20.Location = new System.Drawing.Point(258, 36);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(231, 36);
-            this.label20.TabIndex = 28;
+            this.lbl_ISDUstatus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl_ISDUstatus.Location = new System.Drawing.Point(258, 36);
+            this.lbl_ISDUstatus.Name = "lbl_ISDUstatus";
+            this.lbl_ISDUstatus.Size = new System.Drawing.Size(231, 36);
+            this.lbl_ISDUstatus.TabIndex = 28;
             // 
-            // comboBox2
+            // cob_Type
             // 
-            this.comboBox2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.cob_Type.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cob_Type.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cob_Type.FormattingEnabled = true;
+            this.cob_Type.Items.AddRange(new object[] {
+            "Signed",
+            "Unsigned",
+            "Hex",
+            "Binary",
+            "Long AB CD",
+            "Long CD AB",
+            "Long BA DC",
+            "Long DC BA",
+            "Float AB CD",
+            "Float CD AB",
+            "Float BA DC",
+            "Float DC BA"});
+            this.cob_Type.Location = new System.Drawing.Point(258, 340);
+            this.cob_Type.Name = "cob_Type";
+            this.cob_Type.Size = new System.Drawing.Size(231, 31);
+            this.cob_Type.TabIndex = 29;
+            // 
+            // cob_ParaList
+            // 
+            this.cob_ParaList.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cob_ParaList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cob_ParaList.FormattingEnabled = true;
+            this.cob_ParaList.Items.AddRange(new object[] {
             "Speed \"In\"(256.0 1)",
             "Speed \"Out\"(257.0 1)",
             "Force(258.0 1)",
@@ -422,17 +455,18 @@
             "\"Start Press\" position(261.0 4)",
             "End Position \"Out\"(262.0 4)",
             "Intermediate position(264.0 4)"});
-            this.comboBox2.Location = new System.Drawing.Point(4, 27);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(492, 31);
-            this.comboBox2.TabIndex = 0;
+            this.cob_ParaList.Location = new System.Drawing.Point(4, 27);
+            this.cob_ParaList.Name = "cob_ParaList";
+            this.cob_ParaList.Size = new System.Drawing.Size(492, 31);
+            this.cob_ParaList.TabIndex = 0;
+            this.cob_ParaList.SelectedIndexChanged += new System.EventHandler(this.cob_ParaList_SelectedIndexChanged);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.tabControl1);
             this.groupBox1.Location = new System.Drawing.Point(254, 97);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(322, 317);
+            this.groupBox1.Size = new System.Drawing.Size(428, 317);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "SMS Control";
@@ -446,7 +480,7 @@
             this.tabControl1.Location = new System.Drawing.Point(3, 26);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(316, 288);
+            this.tabControl1.Size = new System.Drawing.Size(422, 288);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -455,30 +489,40 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(308, 252);
+            this.tabPage1.Size = new System.Drawing.Size(414, 252);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "ProcessData";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel2
             // 
-            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnCount = 3;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 148F));
             this.tableLayoutPanel2.Controls.Add(this.label21, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.textBox6, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.txt_AddressStart, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.btn_In, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.btn_Out, 1, 1);
-            this.tableLayoutPanel2.Controls.Add(this.btn_Ack, 0, 2);
-            this.tableLayoutPanel2.Controls.Add(this.btn_Intermediate, 1, 2);
+            this.tableLayoutPanel2.Controls.Add(this.btn_Ack, 0, 4);
+            this.tableLayoutPanel2.Controls.Add(this.btn_Intermediate, 1, 4);
+            this.tableLayoutPanel2.Controls.Add(this.lbl_i_In, 2, 1);
+            this.tableLayoutPanel2.Controls.Add(this.lbl_i_Out, 2, 2);
+            this.tableLayoutPanel2.Controls.Add(this.lbl_i_Move, 2, 3);
+            this.tableLayoutPanel2.Controls.Add(this.lbl_i_Device, 2, 4);
+            this.tableLayoutPanel2.Controls.Add(this.lbl_i_Intermediate, 2, 5);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 3;
+            this.tableLayoutPanel2.RowCount = 7;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(302, 246);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(408, 246);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // label21
@@ -490,60 +534,145 @@
             this.label21.TabIndex = 0;
             this.label21.Text = "Register";
             // 
-            // textBox6
+            // txt_AddressStart
             // 
-            this.textBox6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox6.Location = new System.Drawing.Point(154, 3);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(145, 30);
-            this.textBox6.TabIndex = 1;
+            this.tableLayoutPanel2.SetColumnSpan(this.txt_AddressStart, 2);
+            this.txt_AddressStart.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txt_AddressStart.Location = new System.Drawing.Point(133, 3);
+            this.txt_AddressStart.Name = "txt_AddressStart";
+            this.txt_AddressStart.Size = new System.Drawing.Size(272, 30);
+            this.txt_AddressStart.TabIndex = 1;
+            this.txt_AddressStart.Text = "0";
+            this.txt_AddressStart.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // btn_In
             // 
             this.btn_In.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_In.Location = new System.Drawing.Point(3, 34);
             this.btn_In.Name = "btn_In";
-            this.btn_In.Size = new System.Drawing.Size(145, 101);
+            this.tableLayoutPanel2.SetRowSpan(this.btn_In, 3);
+            this.btn_In.Size = new System.Drawing.Size(124, 99);
             this.btn_In.TabIndex = 2;
             this.btn_In.Text = "Move \"In\"(1)";
             this.btn_In.UseVisualStyleBackColor = true;
+            this.btn_In.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_In_MouseDown);
+            this.btn_In.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_In_MouseUp);
             // 
             // btn_Out
             // 
             this.btn_Out.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_Out.Location = new System.Drawing.Point(154, 34);
+            this.btn_Out.Location = new System.Drawing.Point(133, 34);
             this.btn_Out.Name = "btn_Out";
-            this.btn_Out.Size = new System.Drawing.Size(145, 101);
+            this.tableLayoutPanel2.SetRowSpan(this.btn_Out, 3);
+            this.btn_Out.Size = new System.Drawing.Size(124, 99);
             this.btn_Out.TabIndex = 3;
             this.btn_Out.Text = "Move \"Out\"(2)";
             this.btn_Out.UseVisualStyleBackColor = true;
+            this.btn_Out.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_Out_MouseDown);
+            this.btn_Out.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_Out_MouseUp);
             // 
             // btn_Ack
             // 
             this.btn_Ack.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_Ack.Location = new System.Drawing.Point(3, 141);
+            this.btn_Ack.Location = new System.Drawing.Point(3, 139);
             this.btn_Ack.Name = "btn_Ack";
-            this.btn_Ack.Size = new System.Drawing.Size(145, 102);
+            this.tableLayoutPanel2.SetRowSpan(this.btn_Ack, 3);
+            this.btn_Ack.Size = new System.Drawing.Size(124, 104);
             this.btn_Ack.TabIndex = 4;
             this.btn_Ack.Text = "Quit Error(3)";
             this.btn_Ack.UseVisualStyleBackColor = true;
+            this.btn_Ack.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_Ack_MouseDown);
+            this.btn_Ack.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_Ack_MouseUp);
             // 
             // btn_Intermediate
             // 
             this.btn_Intermediate.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_Intermediate.Location = new System.Drawing.Point(154, 141);
+            this.btn_Intermediate.Location = new System.Drawing.Point(133, 139);
             this.btn_Intermediate.Name = "btn_Intermediate";
-            this.btn_Intermediate.Size = new System.Drawing.Size(145, 102);
+            this.tableLayoutPanel2.SetRowSpan(this.btn_Intermediate, 3);
+            this.btn_Intermediate.Size = new System.Drawing.Size(124, 104);
             this.btn_Intermediate.TabIndex = 5;
             this.btn_Intermediate.Text = "Move \"Intermediate\"(5)";
             this.btn_Intermediate.UseVisualStyleBackColor = true;
+            this.btn_Intermediate.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_Intermediate_MouseDown);
+            this.btn_Intermediate.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_Intermediate_MouseUp);
+            // 
+            // lbl_i_In
+            // 
+            this.lbl_i_In.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl_i_In.Image = ((System.Drawing.Image)(resources.GetObject("lbl_i_In.Image")));
+            this.lbl_i_In.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbl_i_In.Location = new System.Drawing.Point(264, 31);
+            this.lbl_i_In.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_i_In.Name = "lbl_i_In";
+            this.lbl_i_In.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.lbl_i_In.Size = new System.Drawing.Size(140, 35);
+            this.lbl_i_In.TabIndex = 21;
+            this.lbl_i_In.Text = "    In";
+            this.lbl_i_In.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lbl_i_Out
+            // 
+            this.lbl_i_Out.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl_i_Out.Image = ((System.Drawing.Image)(resources.GetObject("lbl_i_Out.Image")));
+            this.lbl_i_Out.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbl_i_Out.Location = new System.Drawing.Point(264, 66);
+            this.lbl_i_Out.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_i_Out.Name = "lbl_i_Out";
+            this.lbl_i_Out.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.lbl_i_Out.Size = new System.Drawing.Size(140, 35);
+            this.lbl_i_Out.TabIndex = 22;
+            this.lbl_i_Out.Text = "    Out";
+            this.lbl_i_Out.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lbl_i_Move
+            // 
+            this.lbl_i_Move.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl_i_Move.Image = ((System.Drawing.Image)(resources.GetObject("lbl_i_Move.Image")));
+            this.lbl_i_Move.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbl_i_Move.Location = new System.Drawing.Point(264, 101);
+            this.lbl_i_Move.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_i_Move.Name = "lbl_i_Move";
+            this.lbl_i_Move.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.lbl_i_Move.Size = new System.Drawing.Size(140, 35);
+            this.lbl_i_Move.TabIndex = 23;
+            this.lbl_i_Move.Text = "    Move";
+            this.lbl_i_Move.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lbl_i_Device
+            // 
+            this.lbl_i_Device.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl_i_Device.Image = ((System.Drawing.Image)(resources.GetObject("lbl_i_Device.Image")));
+            this.lbl_i_Device.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbl_i_Device.Location = new System.Drawing.Point(264, 136);
+            this.lbl_i_Device.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_i_Device.Name = "lbl_i_Device";
+            this.lbl_i_Device.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.lbl_i_Device.Size = new System.Drawing.Size(140, 35);
+            this.lbl_i_Device.TabIndex = 24;
+            this.lbl_i_Device.Text = "    Device";
+            this.lbl_i_Device.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lbl_i_Intermediate
+            // 
+            this.lbl_i_Intermediate.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl_i_Intermediate.Image = ((System.Drawing.Image)(resources.GetObject("lbl_i_Intermediate.Image")));
+            this.lbl_i_Intermediate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbl_i_Intermediate.Location = new System.Drawing.Point(264, 171);
+            this.lbl_i_Intermediate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_i_Intermediate.Name = "lbl_i_Intermediate";
+            this.lbl_i_Intermediate.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.lbl_i_Intermediate.Size = new System.Drawing.Size(140, 35);
+            this.lbl_i_Intermediate.TabIndex = 25;
+            this.lbl_i_Intermediate.Text = "    Intermediate";
+            this.lbl_i_Intermediate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tabPage2
             // 
             this.tabPage2.Location = new System.Drawing.Point(4, 4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(308, 257);
+            this.tabPage2.Size = new System.Drawing.Size(414, 260);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "ISDU";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -568,6 +697,7 @@
             this.btn_Start.TabIndex = 1;
             this.btn_Start.Text = "Start";
             this.btn_Start.UseVisualStyleBackColor = true;
+            this.btn_Start.Click += new System.EventHandler(this.btn_Start_Click);
             // 
             // listBox1
             // 
@@ -579,6 +709,7 @@
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(194, 257);
             this.listBox1.TabIndex = 0;
+            this.listBox1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listBox1_MouseDoubleClick);
             // 
             // contextMenuStrip1
             // 
@@ -593,47 +724,27 @@
             // addToolStripMenuItem
             // 
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(130, 24);
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
             this.addToolStripMenuItem.Text = "Add";
+            this.addToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem_Click);
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(130, 24);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
             this.deleteToolStripMenuItem.Text = "Delete";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
             // modifyToolStripMenuItem
             // 
             this.modifyToolStripMenuItem.Name = "modifyToolStripMenuItem";
-            this.modifyToolStripMenuItem.Size = new System.Drawing.Size(130, 24);
+            this.modifyToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
             this.modifyToolStripMenuItem.Text = "Modify";
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
-            "Signed",
-            "Unsigned",
-            "Hex",
-            "Binary",
-            "Long AB CD",
-            "Long CD AB",
-            "Long BA DC",
-            "Long DC BA",
-            "Float AB CD",
-            "Float CD AB",
-            "Float BA DC",
-            "Float DC BA"});
-            this.comboBox4.Location = new System.Drawing.Point(258, 340);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(231, 31);
-            this.comboBox4.TabIndex = 29;
+            this.modifyToolStripMenuItem.Click += new System.EventHandler(this.modifyToolStripMenuItem_Click);
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.textBox7);
+            this.groupBox3.Controls.Add(this.txt_IP);
             this.groupBox3.Controls.Add(this.btn_Connect);
             this.groupBox3.Location = new System.Drawing.Point(33, 28);
             this.groupBox3.Name = "groupBox3";
@@ -641,6 +752,15 @@
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Connection";
+            // 
+            // txt_IP
+            // 
+            this.txt_IP.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txt_IP.Location = new System.Drawing.Point(3, 26);
+            this.txt_IP.Name = "txt_IP";
+            this.txt_IP.Size = new System.Drawing.Size(199, 30);
+            this.txt_IP.TabIndex = 1;
+            this.txt_IP.Text = "192.168.1.10";
             // 
             // btn_Connect
             // 
@@ -651,21 +771,31 @@
             this.btn_Connect.TabIndex = 0;
             this.btn_Connect.Text = "Connect";
             this.btn_Connect.UseVisualStyleBackColor = true;
+            this.btn_Connect.Click += new System.EventHandler(this.btn_Connect_Click);
             // 
-            // textBox7
+            // imageList_Status
             // 
-            this.textBox7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox7.Location = new System.Drawing.Point(3, 26);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(199, 30);
-            this.textBox7.TabIndex = 1;
-            this.textBox7.Text = "192.168.1.15";
+            this.imageList_Status.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList_Status.ImageStream")));
+            this.imageList_Status.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList_Status.Images.SetKeyName(0, "status-offline.png");
+            this.imageList_Status.Images.SetKeyName(1, "status.png");
+            // 
+            // imageList_Error
+            // 
+            this.imageList_Error.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList_Error.ImageStream")));
+            this.imageList_Error.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList_Error.Images.SetKeyName(0, "status-offline.png");
+            this.imageList_Error.Images.SetKeyName(1, "status-busy.png");
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1134, 495);
+            this.ClientSize = new System.Drawing.Size(1275, 495);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -676,6 +806,7 @@
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "SMS Test";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.gb_ISDU.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -716,21 +847,21 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cob_Channel;
+        private System.Windows.Forms.TextBox txt_ModuleNumber;
+        private System.Windows.Forms.ComboBox cob_Command;
+        private System.Windows.Forms.TextBox txt_Data;
+        private System.Windows.Forms.TextBox txt_Length;
+        private System.Windows.Forms.TextBox txt_Subindex;
+        private System.Windows.Forms.TextBox txt_Index;
+        private System.Windows.Forms.Label lbl_ISDUstatus;
+        private System.Windows.Forms.ComboBox cob_ParaList;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txt_AddressStart;
         private System.Windows.Forms.Button btn_In;
         private System.Windows.Forms.Button btn_Out;
         private System.Windows.Forms.Button btn_Ack;
@@ -743,10 +874,18 @@
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modifyToolStripMenuItem;
         private System.Windows.Forms.Button btn_Start;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox cob_Type;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txt_IP;
         private System.Windows.Forms.Button btn_Connect;
+        private System.Windows.Forms.Label lbl_i_In;
+        private System.Windows.Forms.Label lbl_i_Out;
+        private System.Windows.Forms.Label lbl_i_Move;
+        private System.Windows.Forms.Label lbl_i_Device;
+        private System.Windows.Forms.Label lbl_i_Intermediate;
+        private System.Windows.Forms.ImageList imageList_Status;
+        private System.Windows.Forms.ImageList imageList_Error;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
